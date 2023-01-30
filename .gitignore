@@ -2,6 +2,7 @@
 dist
 src/*.d.ts.map
 src/index.d.ts
+plugin.cjs
 
 # Logs
 logs

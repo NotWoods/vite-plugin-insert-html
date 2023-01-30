@@ -1,16 +1,24 @@
 {
   "name": "vite-plugin-insert-html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Super simple Vite plugin to insert HTML into the head or body of your HTML entrypoints",
   "type": "module",
-  "main": "src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./plugin.cjs",
+      "types": "./src/index.d.ts"
+    }
+  },
+  "main": "plugin.js",
   "module": "src/index.js",
   "types": "src/index.d.ts",
   "files": [
-    "src"
+    "src",
+    "plugin.cjs"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && rollup -c",
     "format": "prettier \"src/*.js\" \"test/**/*.js\" \"*.{mjs,json,md}\" --write"
   },
   "repository": "NotWoods/vite-plugin-insert-html",

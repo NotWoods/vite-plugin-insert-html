@@ -4,6 +4,8 @@
 
 Super simple Vite plugin to insert HTML into the head or body of your HTML entrypoints.
 
+This plugin takes advantage of Vite's existing HTML serializer, and has no other dependencies. Use it to inject social metadata, analytics scripts, or any HTML that you need to insert in every page of your Vite app.
+
 ## Installation
 
 ```bash
