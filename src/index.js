@@ -4,7 +4,7 @@
  * Create a tag descriptor using hyperscript style
  * @overload
  * @param {string} tag
- * @param {Record<string, string | boolean>} [attrs]
+ * @param {Record<string, string | boolean> | null} [attrs]
  * @param {...import('vite').HtmlTagDescriptor} children
  * @returns {import('vite').HtmlTagDescriptor}
  */
@@ -12,14 +12,14 @@
  * Create a tag descriptor
  * @overload
  * @param {string} tag
- * @param {Record<string, string | boolean> | undefined} attrs
+ * @param {Record<string, string | boolean> | null | undefined} attrs
  * @param {string} children
  * @returns {import('vite').HtmlTagDescriptor}
  */
 /**
  * Create a tag descriptor
  * @param {string} tag
- * @param {Record<string, string | boolean>} [attrs]
+ * @param {Record<string, string | boolean> | null} [attrs]
  * @param {...(string | import('vite').HtmlTagDescriptor)} children
  * @returns {import('vite').HtmlTagDescriptor}
  */
@@ -32,7 +32,7 @@ export function h(tag, attrs, ...children) {
     childTags = /** @type {import('vite').HtmlTagDescriptor[]} */ (children);
   }
 
-  return { tag, attrs, children: childTags };
+  return { tag, attrs: attrs || undefined, children: childTags };
 }
 
 /**
@@ -40,16 +40,17 @@ export function h(tag, attrs, ...children) {
  */
 
 /**
- * @param {object} tags
- * @param {Tags} [tags.head]
- * @param {Tags} [tags.headPrepend]
- * @param {Tags} [tags.body]
- * @param {Tags} [tags.bodyPrepend]
+ * Insert additional tags into every Vite HTML entrypoint.
+ * @param {object} tags Tags to insert
+ * @param {Tags} [tags.head] Tags to insert before the closing `</head>` tag
+ * @param {Tags} [tags.headPrepend] Tags to insert after the opening `<head>` tag
+ * @param {Tags} [tags.body] Tags to insert before the closing `</body>` tag
+ * @param {Tags} [tags.bodyPrepend] Tags to insert after the opening `<body>` tag
  * @returns {import('vite').Plugin}
  */
-export function injectTags(tags) {
+export function insertHtml(tags) {
   return {
-    name: 'inject-tags',
+    name: 'insert-html',
     transformIndexHtml(html, context) {
       /**
        * @param {Tags | undefined} tags
