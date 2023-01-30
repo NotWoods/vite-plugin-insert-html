@@ -1,0 +1,41 @@
+{
+  "name": "vite-plugin-insert-html",
+  "version": "1.0.0",
+  "description": "Super simple Vite plugin to insert HTML into the head or body of your HTML entrypoints",
+  "type": "module",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier \"src/*.js\" \"test/**/*.js\" \"*.{mjs,json,md}\" --write"
+  },
+  "repository": "NotWoods/vite-plugin-insert-html",
+  "bugs": "https://github.com/NotWoods/vite-plugin-insert-html/issues",
+  "homepage": "https://github.com/NotWoods/vite-plugin-insert-html#readme",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "html",
+    "inject",
+    "insert",
+    "hyperscript",
+    "jsx"
+  ],
+  "author": "Tiger Oakes <contact@tigeroakes.com> (https://tigeroakes.com)",
+  "license": "MIT",
+  "peerDependencies": {
+    "vite": ">=4.0.0 <5"
+  },
+  "devDependencies": {
+    "prettier": "~2.8.3",
+    "typescript": "^5.0.0-beta",
+    "vite": "^4.0.0"
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
