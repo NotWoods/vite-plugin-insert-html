@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-insert-html",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Super simple Vite plugin to insert HTML into the head or body of your HTML entrypoints",
   "type": "module",
   "exports": {
@@ -36,12 +36,12 @@
   "author": "Tiger Oakes <contact@tigeroakes.com> (https://tigeroakes.com)",
   "license": "MIT",
   "peerDependencies": {
-    "vite": ">=4.0.0 <5"
+    "vite": ">=4.0.0 <6"
   },
   "devDependencies": {
-    "prettier": "~2.8.3",
-    "typescript": "^5.0.0-beta",
-    "vite": "^4.0.0"
+    "prettier": "~3.2.4",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12"
   },
   "prettier": {
     "singleQuote": true

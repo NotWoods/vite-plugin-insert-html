@@ -6,6 +6,6 @@
     "emitDeclarationOnly": true,
     "declarationMap": true,
     "lib": ["es2017"],
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+  },
 }
